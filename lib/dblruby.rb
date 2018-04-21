@@ -1,3 +1,6 @@
+require 'json'
+require 'rest-client'
+
 # All DBLRuby functionality, whether extended or just here.
 class DBLRuby
   # Initialize a new DBL API, via a key.
