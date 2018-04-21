@@ -14,8 +14,9 @@ class DBLRuby::Stats
   end
 
   def updateservercount(count)
-    url = "https://discordbots.org/api/bots/#{CONFIG['client_id']}/stats"
+    url = "https://discordbots.org/api/bots/#{@id}/stats"
     json = '{"server_count":' + count.to_s + '}'
     RestClient.post(url, json, :Authorization => @api, :'Content-Type' => :json)
+    "Successfully set the server count to #{count}"
   end
 end
