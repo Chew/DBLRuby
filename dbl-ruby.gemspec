@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
   s.version = '0.0.1'
   s.date = '2018-04-19'
   s.summary = 'A gem made for DBL in ruby.'
-  s.description = 'no u'
+  s.description = 'A gem made for the Discord Bot List in ruby.'
   s.authors = ['Chewsterchew']
   s.email = 'chew@chew.pw'
   s.files = Dir['lib/**/*.rb']
