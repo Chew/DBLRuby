@@ -78,6 +78,11 @@ class DBLRuby::Bot
     @data['username']
   end
 
+  # Returns the bot's distinct, which is the Username and Discriminator.
+  def distinct
+    "#{username}#{tag}"
+  end
+
   # Get the bot's creation date (on the list).
   def date
     @data['date']
