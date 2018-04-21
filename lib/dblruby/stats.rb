@@ -8,7 +8,7 @@ class DBLRuby::Stats
   end
 
   # Get the server count, returns an int.
-  def getservercount
+  def servercount
     url = "https://discordbots.org/api/bots/#{@id}"
     JSON.parse(RestClient.get(url))['server_count'].to_i
   end
