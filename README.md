@@ -2,8 +2,8 @@
 
 A ruby library for Discord Bot list.
 
-[![Gem](https://img.shields.io/gem/v/discordrb.svg)](https://rubygems.org/gems/discordrb)
-[![Gem](https://img.shields.io/gem/dt/discordrb.svg)](https://rubygems.org/gems/discordrb)
+[![Gem](https://img.shields.io/gem/v/dblruby.svg)](https://rubygems.org/gems/dblruby)
+[![Gem](https://img.shields.io/gem/dt/dblruby.svg)](https://rubygems.org/gems/dblruby)
 [![Discord Server](https://discordapp.com/api/guilds/134445052805120001/widget.png)](https://discord.gg/FznS7Ha)
 
 ## What is this for?
