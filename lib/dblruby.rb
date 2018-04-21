@@ -1,3 +1,4 @@
+# Require external gems
 require 'json'
 require 'rest-client'
 
@@ -15,7 +16,15 @@ class DBLRuby
     @stats = Stats.new(@api, @id)
   end
 
+  def loadbot(id)
+    @bot = Bot.new(id)
+  end
+
+  attr_reader :bot
   attr_reader :stats
 end
 
+# Require files.
+require 'dblruby/bot'
+require 'dblruby/errors'
 require 'dblruby/stats'
