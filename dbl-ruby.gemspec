@@ -9,5 +9,5 @@ Gem::Specification.new do |s|
   s.files = Dir['lib/**/*.rb']
   s.homepage = 'http://rubygems.org/gems/dblruby'
   s.license = 'MIT'
-  s.add_dependency 'rest-client', '>= 2.1.0.rc1'
+  s.add_runtime_dependency 'rest-client', '~> 2.1.0.rc1'
 end
