@@ -6,7 +6,8 @@ Gem::Specification.new do |s|
   s.description = 'no u'
   s.authors = ['Chew']
   s.email = 'chew@chew.pw'
-  s.files = ['lib/dblruby.rb', 'lib/dblruby/translator.rb']
+  s.files = Dir['lib/**/*.rb']
   s.homepage = 'http://rubygems.org/gems/dblruby'
   s.license = 'MIT'
+  s.add_dependency 'rest-client', '>= 2.1.0.rc1'
 end
