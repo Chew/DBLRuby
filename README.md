@@ -4,6 +4,7 @@ A ruby library for Discord Bot list.
 
 [![Gem](https://img.shields.io/gem/v/dblruby.svg)](https://rubygems.org/gems/dblruby)
 [![Gem](https://img.shields.io/gem/dt/dblruby.svg)](https://rubygems.org/gems/dblruby)
+[![Build Status](https://travis-ci.org/Chewsterchew/DBLRuby.svg?branch=master)](https://travis-ci.org/Chewsterchew/DBLRuby)
 [![Discord Server](https://img.shields.io/discord/134445052805120001.svg?colorB=7289DA&logo=discord)](https://discord.gg/FznS7Ha)
 
 ## What is this for?
