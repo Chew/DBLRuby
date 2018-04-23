@@ -20,4 +20,14 @@ class DBLRuby::Stats
     RestClient.post(url, json, :Authorization => @api, :'Content-Type' => :json)
     "Successfully set the server count to #{count}"
   end
+
+  # @return [true, false] if the user voted or not.
+  def verifyvote(id)
+    r = RestClient.get("https://discordbots.org/api/bots/check?userID=#{id}",
+                       params: { userId: id },
+                       :Authorization => @api,
+                       :'Content-Type' => :json)
+    o = JSON.parse(r)['voted'].to_i
+    !o.zero?
+  end
 end
