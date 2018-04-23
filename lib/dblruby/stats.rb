@@ -7,13 +7,15 @@ class DBLRuby::Stats
     @id = id
   end
 
-  # Get the server count, returns an int.
+  # Get the bot's server count, returns an int.
+  # @return [Integer] amount of servers the bot is on.
   def servercount
     url = "https://discordbots.org/api/bots/#{@id}"
     JSON.parse(RestClient.get(url))['server_count'].to_i
   end
 
   # Update the bot's server count.
+  # @param id [Integer, String] Integer/String ID of bot server count.
   def updateservercount(count)
     url = "https://discordbots.org/api/bots/#{@id}/stats"
     json = '{"server_count":' + count.to_s + '}'
@@ -21,6 +23,8 @@ class DBLRuby::Stats
     "Successfully set the server count to #{count}"
   end
 
+  # Check to see if a user really voted, via an ID.
+  # @param id [Integer, String] Integer/String ID of user you're requesting.
   # @return [true, false] if the user voted or not.
   def verifyvote(id)
     r = RestClient.get('https://discordbots.org/api/bots/check',
