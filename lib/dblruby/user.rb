@@ -25,18 +25,18 @@ class DBLRuby::User
   end
 
   # Get the user's discriminator.
-  # @return [String] the user's discriminator.
+  # @return [Integer] the user's discriminator without the #.
   def discriminator
-    @data['discriminator']
+    @data['discriminator'].delete('#').to_i
   end
 
   alias discrim discriminator
   alias tag discriminator
 
   # Returns the user's distinct, which is the Username and Discriminator.
-  # @return [String] the user's dis.
+  # @return [String] the user's username + discrim.
   def distinct
-    "#{username}#{tag}"
+    "#{username}\##{tag}"
   end
 
   # Get the user's avatar.

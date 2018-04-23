@@ -77,9 +77,9 @@ class DBLRuby::Bot
   end
 
   # Get the bot's discriminator.
-  # @return [String] the bot's discriminator.
+  # @return [Integer] the bot's discriminator without the #.
   def discriminator
-    @data['discriminator']
+    @data['discriminator'].delete('#').to_i
   end
 
   alias discrim discriminator
@@ -94,7 +94,7 @@ class DBLRuby::Bot
   # Returns the bot's distinct, which is the Username and Discriminator.
   # @return [String] the bot's distinct.
   def distinct
-    "#{username}#{tag}"
+    "#{username}\##{tag}"
   end
 
   # Get the bot's creation date (on the list).
