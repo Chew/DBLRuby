@@ -16,10 +16,12 @@ class DBLRuby
     @stats = Stats.new(@api, @id)
   end
 
+  # Load a bot.
   def loadbot(id)
     @bot = Bot.new(id)
   end
 
+  # Load a user
   def loaduser(id)
     @user = User.new(id)
   end
