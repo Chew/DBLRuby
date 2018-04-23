@@ -26,6 +26,14 @@ class DBLRuby
     @user = User.new(id)
   end
 
+  # Get the ID from instantiation
+  attr_reader :id
+
+  # Get the API Key from instantiation
+  attr_reader :api
+
+  alias apikey api
+
   attr_reader :bot
   attr_reader :user
   attr_reader :stats
