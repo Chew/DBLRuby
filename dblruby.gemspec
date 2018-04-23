@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = 'dblruby'
-  s.version = '0.4.0'
-  s.date = '2018-04-22'
+  s.version = '0.5.0'
+  s.date = '2018-04-23'
   s.summary = 'A gem made for DBL in ruby.'
   s.description = 'A gem made for the Discord Bot List in ruby.'
   s.authors = ['Chewsterchew']
