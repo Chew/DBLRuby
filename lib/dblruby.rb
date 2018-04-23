@@ -30,6 +30,22 @@ class DBLRuby
     @user = User.new(id)
   end
 
+  # Change the API key
+  # @param apikey [String] API Key of the bot, taken from the DBL.
+  def updateapi(apikey)
+    @api = apikey
+    makestats
+  end
+
+  alias updateapikey updateapi
+
+  # Change the bot ID
+  # @param id [Integer, String] Integer/String of the bot's id.
+  def updateid(id)
+    @id = id
+    makestats
+  end
+
   # Get the ID from instantiation
   attr_reader :id
 
