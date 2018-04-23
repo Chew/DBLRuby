@@ -38,6 +38,7 @@ class DBLRuby
   end
 
   alias updateapikey updateapi
+  alias api= updateapi
 
   # Change the bot ID
   # @param id [Integer, String] Integer/String of the bot's id.
@@ -45,6 +46,8 @@ class DBLRuby
     @id = id
     makestats
   end
+
+  alias id= updateid
 
   # Get the ID from instantiation
   attr_reader :id
