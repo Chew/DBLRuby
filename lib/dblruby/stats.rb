@@ -23,7 +23,7 @@ class DBLRuby::Stats
 
   # @return [true, false] if the user voted or not.
   def verifyvote(id)
-    r = RestClient.get("https://discordbots.org/api/bots/check?userID=#{id}",
+    r = RestClient.get('https://discordbots.org/api/bots/check',
                        params: { userId: id },
                        :Authorization => @api,
                        :'Content-Type' => :json)
