@@ -5,4 +5,7 @@ module DBLRuby::Errors
 
   # Ran if a 404 error is returned in #loadbot
   class InvalidBot < RuntimeError; end
+
+  # Ran if a 404 error is returned in #loaduser
+  class InvalidUser < RuntimeError; end
 end
