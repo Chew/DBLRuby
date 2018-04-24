@@ -5,6 +5,9 @@ class DBLRuby::Bot
   def initialize(id)
     url = "https://discordbots.org/api/bots/#{id}"
     @data = JSON.parse(RestClient.get(url))
+  rescue RestClient::NotFound
+    raise DBLRuby::Errors::InvalidBot,
+          'The API returned a 404 error! Is that bot listed?'
   end
 
   # @return data in raw json form.
