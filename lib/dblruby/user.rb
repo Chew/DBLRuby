@@ -6,7 +6,7 @@ class DBLRuby::User
     url = "https://discordbots.org/api/users/#{id}"
     @data = JSON.parse(RestClient.get(url))
   rescue RestClient::NotFound
-    raise DBLRuby::Errors::InvalidBot,
+    raise DBLRuby::Errors::InvalidUser,
           'The API returned a 404 error! Does that user exist?'
   end
 
