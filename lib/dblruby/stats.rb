@@ -14,6 +14,8 @@ class DBLRuby::Stats
     JSON.parse(RestClient.get(url))['server_count'].to_i
   end
 
+  alias servers servercount
+
   # Update the bot's server count.
   # @param id [Integer, String] Integer/String ID of bot server count.
   def updateservercount(count)
@@ -22,6 +24,8 @@ class DBLRuby::Stats
     RestClient.post(url, json, :Authorization => @api, :'Content-Type' => :json)
     "Successfully set the server count to #{count}"
   end
+
+  alias servers= updateservercount
 
   # Check to see if a user really voted, via an ID.
   # @param id [Integer, String] Integer/String ID of user you're requesting.
