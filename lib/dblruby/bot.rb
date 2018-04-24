@@ -13,6 +13,8 @@ class DBLRuby::Bot
   # @return data in raw json form.
   attr_reader :data
 
+  alias to_s data
+
   # Get the bot's invite link.
   # @return [String] the bot's invite link.
   def invite
