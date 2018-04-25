@@ -3,3 +3,6 @@ Style/ClassAndModuleChildren:
 
 Metrics/ClassLength:
   Enabled: false
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
