@@ -6,3 +6,7 @@ Metrics/ClassLength:
 
 Gemspec/RequiredRubyVersion:
   Enabled: false
+
+Metrics/LineLength:
+  Exclude:
+    - 'dblruby.gemspec'
