@@ -39,6 +39,7 @@ class DBLRuby
 
   alias updateapikey updateapi
   alias api= updateapi
+  alias apikey= updateapi
 
   # Change the bot ID
   # @param id [Integer, String] Integer/String of the bot's id.
