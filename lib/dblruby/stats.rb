@@ -23,6 +23,9 @@ class DBLRuby::Stats
     json = '{"server_count":' + count.to_s + '}'
     RestClient.post(url, json, :Authorization => @api, :'Content-Type' => :json)
     "Successfully set the server count to #{count}"
+  rescue RestClient::Unauthorized
+    raise DBLRuby::Errors::InvalidAPIKey,
+          'There was an error posting stats to the DBL. Is your API key ok?'
   end
 
   alias servers= updateservercount
@@ -37,5 +40,8 @@ class DBLRuby::Stats
                        :'Content-Type' => :json)
     o = JSON.parse(r)['voted'].to_i
     !o.zero?
+  rescue RestClient::Unauthorized
+    raise DBLRuby::Errors::InvalidAPIKey,
+          'There was an error posting stats to the DBL. Is your API key ok?'
   end
 end
