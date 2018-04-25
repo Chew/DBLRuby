@@ -2,8 +2,8 @@ Gem::Specification.new do |s|
   s.name = 'dblruby'
   s.version = '0.5.0'
   s.date = '2018-04-23'
-  s.summary = 'A Discord bot list ruby library.'
-  s.description = 'A ruby library made for the Discord Bot List.'
+  s.summary = 'Discord Bot List API for Ruby'
+  s.description = 'A Ruby library for the Discord Bot List (https://discordbots.org) API.'
   s.authors = ['Chewsterchew']
   s.email = 'chew@chew.pw'
   s.files = Dir['lib/**/*.rb']
