@@ -21,43 +21,43 @@ class DBLRuby::Bot
     @data['error']
   end
 
-  # Get the bot's invite link.
+  # The custom bot invite url of the bot.
   # @return [String] the bot's invite link.
   def invite
     @data['invite']
   end
 
-  # Get the bot's GitHub Repo link.
+  # The link to the github repo of the bot.
   # @return [String] the bot's GitHub Repo link.
   def github
     @data['github']
   end
 
-  # Get the bot's website link.
+  # The website url of the bot.
   # @return [String] the bot's website link.
   def website
     @data['website']
   end
 
-  # Get the bot's Long Description.
+  # The long description of the bot. Can contain HTML and/or Markdown.
   # @return [String] the bot's Long Description.
   def longdesc
     @data['longdesc']
   end
 
-  # Get the bot's Short Description.
+  # The short description of the bot.
   # @return [String] the bot's Short Description.
   def shortdesc
     @data['shortdesc']
   end
 
-  # Get the bot's prefix.
+  # The prefix of the bot.
   # @return [String] the bot's prefix.
   def prefix
     @data['prefix']
   end
 
-  # Get the bot's library.
+  # The library of the bot.
   # @return [String] the bot's library.
   def lib
     @data['lib']
@@ -69,13 +69,13 @@ class DBLRuby::Bot
     @data['clientid'].to_i
   end
 
-  # Get the bot's def avatar.
+  # The cdn hash of the bot's avatar if the bot has none.
   # @return [String] the bot's defAvatar.
   def defavatar
     @data['defAvatar']
   end
 
-  # Get the bot's avatar.
+  # The avatar hash of the bot's avatar.
   # @return [String] the bot's avatar.
   def avatar
     @data['avatar']
@@ -87,13 +87,13 @@ class DBLRuby::Bot
     "https://cdn.discordapp.com/avatars/#{id}/#{avatar}.webp?size=1024"
   end
 
-  # Get the bot's ID.
+  # The id of the bot.
   # @return [Integer] the bot's id.
   def id
     @data['id'].to_i
   end
 
-  # Get the bot's discriminator.
+  # The discriminator of the bot.
   # @return [Integer] the bot's discriminator without the #.
   def discriminator
     @data['discriminator'].delete('#').to_i
@@ -102,7 +102,7 @@ class DBLRuby::Bot
   alias discrim discriminator
   alias tag discriminator
 
-  # Get the bot's username.
+  # The username of the bot.
   # @return [String] the bot's username.
   def username
     @data['username']
@@ -114,19 +114,19 @@ class DBLRuby::Bot
     "#{username}\##{tag}"
   end
 
-  # Get the bot's approval date (on the list).
+  # The date when the bot was approved.
   # @return [Date] the bot's approval date.
   def date
     Date.parse(@data['date'])
   end
 
-  # Get the bot's support server invite code.
+  # The support server invite code of the bot.
   # @return [String] the bot's support server code.
   def support
     @data['support']
   end
 
-  # Get the bot's support server link, ready for clicking.
+  # The bot's support server link, ready for clicking.
   # @return [String] the bot's support server link.
   def support_link
     "https://discord.gg/#{support}"
@@ -155,7 +155,7 @@ class DBLRuby::Bot
     @data['shards']
   end
 
-  # Get the bot's monthly votes.
+  # The amount of upvotes the bot has this month.
   # @return [Integer] the bot's monthly points/votes.
   def monthlypoints
     @data['monthlyPoints'].to_i
@@ -163,7 +163,7 @@ class DBLRuby::Bot
 
   alias monthlyvotes monthlypoints
 
-  # Get the bot's total votes.
+  # The amount of upvotes the bot has.
   # @return [Integer] the bot's total points/votes.
   def points
     @data['points'].to_i
@@ -171,7 +171,7 @@ class DBLRuby::Bot
 
   alias votes points
 
-  # Get the bot's certified status.
+  # The certified status of the bot.
   # @return [true, false] the bot's certified status.
   def certifiedbot
     @data['certifiedBot']
@@ -181,19 +181,19 @@ class DBLRuby::Bot
   alias certified certifiedbot
   alias certifiedbot? certifiedbot
 
-  # Get the bot's owners.
+  # The owners of the bot. First one in the array is the main owner.
   # @return [Array<String>] the bot's owners in an array.
   def owners
     @data['owners']
   end
 
-  # Get the bot's sorting tags.
+  # The tags of the bot.
   # @return [Array<String>] the bot's tags in an array.
   def tags
     @data['tags']
   end
 
-  # Get the bot's vanity URL, if it has one.
+  # The vanity url of the bot.
   # @return [String] the bot's vanity url.
   def vanity
     @data['vanity']
