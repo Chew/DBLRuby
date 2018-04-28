@@ -15,6 +15,12 @@ class DBLRuby::User
 
   alias to_s data
 
+  # Return the error if there is one, nil otherwise.
+  # @return [String, nil] the error.
+  def error
+    @data['error']
+  end
+
   # Get the user's ID.
   # @return [Integer] User ID in integer form.
   def id
@@ -40,6 +46,12 @@ class DBLRuby::User
   # @return [String] the user's username + discrim.
   def distinct
     "#{username}\##{tag}"
+  end
+
+  # Get the user's def avatar.
+  # @return [String] the user's defAvatar.
+  def defavatar
+    @data['defAvatar']
   end
 
   # Get the user's avatar.
