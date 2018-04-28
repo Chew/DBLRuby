@@ -72,6 +72,12 @@ class DBLRuby::User
     @data['bio']
   end
 
+  # The banner image url of the user
+  # @return [String] the banner image url.
+  def banner
+    @data['banner']
+  end
+
   # The social usernames of the user.
   # @return [Array<String>] the user's social links.
   def social
