@@ -114,10 +114,10 @@ class DBLRuby::Bot
     "#{username}\##{tag}"
   end
 
-  # Get the bot's creation date (on the list).
-  # @return [String] the bot's date.
+  # Get the bot's approval date (on the list).
+  # @return [Date] the bot's approval date.
   def date
-    @data['date']
+    Date.parse(@data['date'])
   end
 
   # Get the bot's support server invite code.
