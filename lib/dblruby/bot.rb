@@ -206,9 +206,4 @@ class DBLRuby::Bot
   end
 
   alias legacy? legacy
-
-  # Debug method to force a bot error.
-  def fail
-    raise DBLRuby::Errors::NoData, 'The API didn\'t return anything!'
-  end
 end

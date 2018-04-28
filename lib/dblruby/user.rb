@@ -169,9 +169,4 @@ class DBLRuby::User
   end
 
   alias admin admin?
-
-  # Debug method to force a bot error.
-  def fail
-    raise DBLRuby::Errors::NoData, 'The API didn\'t return anything!'
-  end
 end
