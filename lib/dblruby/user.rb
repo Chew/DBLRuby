@@ -21,19 +21,19 @@ class DBLRuby::User
     @data['error']
   end
 
-  # Get the user's ID.
+  # The id of the user.
   # @return [Integer] User ID in integer form.
   def id
     @data['id'].to_i
   end
 
-  # Get the user's username.
+  # The username of the user.
   # @return [String] the user's username.
   def username
     @data['username']
   end
 
-  # Get the user's discriminator.
+  # The discriminator of the user.
   # @return [Integer] the user's discriminator without the #.
   def discriminator
     @data['discriminator'].delete('#').to_i
@@ -48,13 +48,13 @@ class DBLRuby::User
     "#{username}\##{tag}"
   end
 
-  # Get the user's def avatar.
+  # The cdn hash of the user's avatar if the user has none.
   # @return [String] the user's defAvatar.
   def defavatar
     @data['defAvatar']
   end
 
-  # Get the user's avatar.
+  # The avatar hash of the user's avatar.
   # @return [String] the user's avatar hash.
   def avatar
     @data['avatar']
@@ -66,13 +66,13 @@ class DBLRuby::User
     "https://cdn.discordapp.com/avatars/#{id}/#{avatar}.webp?size=1024"
   end
 
-  # Get the user's bio.
+  # The bio of the user.
   # @return [String] the user's bio.
   def bio
     @data['bio']
   end
 
-  # Get a list of social links for the user
+  # The social usernames of the user.
   # @return [Array<String>] the user's social links.
   def social
     @data['social']
@@ -84,37 +84,37 @@ class DBLRuby::User
     !@data['social'].nil?
   end
 
-  # Get the user's YouTube channel link.
+  # The youtube channel id of the user.
   # @return [String] the user's youtube channel link.
   def youtube
     @data['social']['youtube']
   end
 
-  # Get the user's Reddit link.
+  # The reddit username of the user.
   # @return [String] the user's reddit link.
   def reddit
     @data['social']['reddit']
   end
 
-  # Get the user's Twitter link.
+  # The twitter username of the user.
   # @return [String] the user's twitter link.
   def twitter
     @data['social']['twitter']
   end
 
-  # Get the user's Instagram link.
+  # The instagram username of the user.
   # @return [String] the user's instagram link.
   def instagram
     @data['social']['instagram']
   end
 
-  # Get the user's Github link.
+  # The github username of the user.
   # @return [String] the user's github link.
   def github
     @data['social']['github']
   end
 
-  # Get the user's Hex Colour.
+  # The custom hex color of the user.
   # @return [String] the user's hex code for their page.
   def color
     @data['color']
@@ -122,7 +122,7 @@ class DBLRuby::User
 
   alias colour color
 
-  # Get the user's supporter status.
+  # The supporter status of the user.
   # @return [true, false] the user's supporter status.
   def supporter?
     @data['supporter']
@@ -130,7 +130,7 @@ class DBLRuby::User
 
   alias supporter supporter?
 
-  # Get the user's certified developer status.
+  # The certified status of the user.
   # @return [true, false] the user's certified status.
   def certified?
     @data['lib']
@@ -140,7 +140,7 @@ class DBLRuby::User
   alias certifieddev certified
   alias certifieddev? certified
 
-  # Get the user's mod status.
+  # The mod status of the user.
   # @return [true, false] the user's mod status.
   def mod?
     @data['mod']
@@ -148,7 +148,7 @@ class DBLRuby::User
 
   alias mod mod?
 
-  # Get the user's website moderator status.
+  # The website moderator status of the user.
   # @return [true, false] the user's website mod status.
   def webmod?
     @data['webMod']
@@ -156,7 +156,7 @@ class DBLRuby::User
 
   alias webmod webmod?
 
-  # Get the user's admin status.
+  # The admin status of the user.
   # @return [true, false] the user's admin status.
   def admin?
     @data['admin']
