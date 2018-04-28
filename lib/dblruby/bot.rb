@@ -15,6 +15,12 @@ class DBLRuby::Bot
 
   alias to_s data
 
+  # Return the error if there is one, nil otherwise.
+  # @return [String, nil] the error.
+  def error
+    @data['error']
+  end
+
   # Get the bot's invite link.
   # @return [String] the bot's invite link.
   def invite
@@ -61,6 +67,12 @@ class DBLRuby::Bot
   # @return [Integer] the bot's client id.
   def clientid
     @data['clientid'].to_i
+  end
+
+  # Get the bot's def avatar.
+  # @return [String] the bot's defAvatar.
+  def defavatar
+    @data['defAvatar']
   end
 
   # Get the bot's avatar.
@@ -179,6 +191,12 @@ class DBLRuby::Bot
   # @return [Array<String>] the bot's tags in an array.
   def tags
     @data['tags']
+  end
+
+  # Get the bot's vanity URL, if it has one.
+  # @return [String] the bot's vanity url.
+  def vanity
+    @data['vanity']
   end
 
   # Get the bot's legacy status.
