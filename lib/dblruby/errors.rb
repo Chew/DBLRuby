@@ -8,4 +8,7 @@ module DBLRuby::Errors
 
   # Ran if a 401 unauthorized error is returned in stats.
   class InvalidAPIKey < RuntimeError; end
+
+  # Ran if a 404 unknown error is returned in stats.
+  class InvalidID < RuntimeError; end
 end
