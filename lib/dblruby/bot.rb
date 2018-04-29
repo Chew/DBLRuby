@@ -21,6 +21,12 @@ class DBLRuby::Bot
     @data['error']
   end
 
+  # Return true if there is an error, false otherwise.
+  # @return [true, false] if there is an error.
+  def error?
+    !@data['error'].nil?
+  end
+
   # The custom bot invite url of the bot.
   # @return [String] the bot's invite link.
   def invite
