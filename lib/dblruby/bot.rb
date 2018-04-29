@@ -2,6 +2,7 @@
 class DBLRuby::Bot
   # Initialize the bot
   # @param id [Integer, String] Integer/String ID of bot you're requesting.
+  # @raise [DBLRuby::Errors::InvalidBot] if the DBL returns a 404 error.
   def initialize(id)
     url = "https://discordbots.org/api/bots/#{id}"
     @data = JSON.parse(RestClient.get(url))

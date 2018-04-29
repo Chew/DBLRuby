@@ -9,6 +9,7 @@ class DBLRuby::Stats
 
   # Get the bot's server count, returns an int.
   # @return [Integer] amount of servers the bot is on.
+  # @raise [DBLRuby::Errors::InvalidID] if the DBL returns a 404 error.
   def servercount
     url = "https://discordbots.org/api/bots/#{@id}"
     JSON.parse(RestClient.get(url))['server_count'].to_i
@@ -21,6 +22,7 @@ class DBLRuby::Stats
 
   # Update the bot's server count.
   # @param id [Integer, String] Integer/String ID of bot server count.
+  # @raise [DBLRuby::Errors::InvalidAPIKey] if the DBL returns a 401 error.
   def updateservercount(count)
     url = "https://discordbots.org/api/bots/#{@id}/stats"
     json = '{"server_count":' + count.to_s + '}'
@@ -36,6 +38,7 @@ class DBLRuby::Stats
   # Check to see if a user really voted, via an ID.
   # @param id [Integer, String] Integer/String ID of user you're requesting.
   # @return [true, false] if the user voted or not.
+  # @raise [DBLRuby::Errors::InvalidAPIKey] if the DBL returns a 401 error.
   def verifyvote(id)
     r = RestClient.get('https://discordbots.org/api/bots/check',
                        params: { userId: id },
