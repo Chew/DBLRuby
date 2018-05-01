@@ -127,6 +127,13 @@ class DBLRuby::Bot
     Date.parse(@data['date'])
   end
 
+  # The time when the bot was approved.
+  # This is compatiable with embed.timestamp, unlike #date
+  # @return [Time] the bot's approval time.
+  def time
+    Time.parse(@data['date'])
+  end
+
   # The support server invite code of the bot.
   # @return [String] the bot's support server code.
   def support
