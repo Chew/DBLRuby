@@ -2,13 +2,21 @@ language: ruby
 rvm:
   - 2.4.1
 
+install:
+  - gem install rubocop -v 0.55.0
+  - gem install rest-client
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 script:
   - rake
   - rubocop
 
-install:
-  - gem install rubocop -v 0.55.0
-  - gem install rest-client
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 notifications:
   webhooks:
