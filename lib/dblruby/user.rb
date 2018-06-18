@@ -146,7 +146,7 @@ class DBLRuby::User
   # The certified status of the user.
   # @return [true, false] the user's certified status.
   def certified?
-    @data['lib']
+    @data['certifiedDev']
   end
 
   alias certified certified?
