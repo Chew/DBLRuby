@@ -21,13 +21,20 @@ class DBLRuby::Stats
   alias servers servercount
 
   # Update the bot's server count.
-  # @param id [Integer, String] Integer/String ID of bot server count.
+  # @param count [Integer, Array<Integer>] Integer/String of bot server count.
+  # @param shard_id [Integer] ID of the shard
+  # @param shard_count [Integer] amount of shards the bot has.
   # @raise [DBLRuby::Errors::InvalidAPIKey] if the DBL returns a 401 error.
-  def updateservercount(count)
+  # @return The count of the servers.
+  def updateservercount(count, shard_id = nil, shard_count = nil)
     url = "https://discordbots.org/api/bots/#{@id}/stats"
-    json = '{"server_count":' + count.to_s + '}'
-    RestClient.post(url, json, :Authorization => @api, :'Content-Type' => :json)
-    "Successfully set the server count to #{count}"
+    json = {
+      'server_count': count,
+      'shard_id': shard_id,
+      'shard_count': shard_count
+    }
+    RestClient.post(url, json, Authorization: @api, 'Content-Type': :json)
+    count
   rescue RestClient::Unauthorized
     raise DBLRuby::Errors::InvalidAPIKey,
           'There was an error posting stats to the DBL. Is your API key ok?'
@@ -42,8 +49,8 @@ class DBLRuby::Stats
   def verifyvote(id)
     r = RestClient.get('https://discordbots.org/api/bots/check',
                        params: { userId: id },
-                       :Authorization => @api,
-                       :'Content-Type' => :json)
+                       Authorization: @api,
+                       'Content-Type': :json)
     o = JSON.parse(r)['voted'].to_i
     !o.zero?
   rescue RestClient::Unauthorized
