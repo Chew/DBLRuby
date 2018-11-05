@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = 'dblruby'
-  s.version = '0.7.1'
-  s.date = '2018-06-18'
+  s.version = '0.8.0'
+  s.date = '2018-11-05'
   s.summary = 'Discord Bot List API for Ruby'
   s.description = 'A Ruby library for the Discord Bot List (https://discordbots.org) API.'
   s.authors = ['Chewsterchew']
@@ -14,9 +14,9 @@ Gem::Specification.new do |s|
 
   s.metadata = {
     'bug_tracker_uri' => 'https://github.com/Chewsterchew/DBLRuby/issues',
-    'changelog_uri'   => 'https://github.com/Chewsterchew/DBLRuby/releases',
-    'homepage_uri'    => 'http://github.com/Chewsterchew/DBLRuby',
+    'changelog_uri' => 'https://github.com/Chewsterchew/DBLRuby/releases',
+    'homepage_uri' => 'http://github.com/Chewsterchew/DBLRuby',
     'source_code_uri' => 'http://github.com/Chewsterchew/DBLRuby',
-    'wiki_uri'        => 'http://github.com/Chewsterchew/DBLRuby/wiki'
+    'wiki_uri' => 'http://github.com/Chewsterchew/DBLRuby/wiki'
   }
 end
