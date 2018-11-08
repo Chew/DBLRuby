@@ -10,3 +10,6 @@ Gemspec/RequiredRubyVersion:
 Metrics/LineLength:
   Exclude:
     - 'dblruby.gemspec'
+
+Metrics/MethodLength:
+  Max: 12
