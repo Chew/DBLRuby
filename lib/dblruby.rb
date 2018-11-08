@@ -20,15 +20,19 @@ class DBLRuby
 
   # Load a bot.
   # @param id [Integer, String] Integer/String ID of the bot you're requesting.
-  def loadbot(id)
+  def bot(id)
     @bot = Bot.new(id)
   end
 
+  alias loadbot bot
+
   # Load a user
   # @param id [Integer, String] Integer/String ID of the user you're requesting.
-  def loaduser(id)
+  def user(id)
     @user = User.new(id)
   end
+
+  alias loaduser user
 
   # Change the API key
   # @param apikey [String] API Key of the bot, taken from the DBL.
@@ -58,8 +62,6 @@ class DBLRuby
 
   alias apikey api
 
-  attr_reader :bot
-  attr_reader :user
   attr_reader :stats
 end
 
