@@ -52,6 +52,11 @@ class DBLRuby
     makestats
   end
 
+  # Define voting
+  def voting
+    @voting = Voting.new
+  end
+
   alias id= updateid
 
   # Get the ID from instantiation
@@ -70,3 +75,4 @@ require 'dblruby/bot'
 require 'dblruby/errors'
 require 'dblruby/user'
 require 'dblruby/stats'
+require 'dblruby/voting'
