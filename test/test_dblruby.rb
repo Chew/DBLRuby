@@ -16,9 +16,9 @@ class DBLRubyTest < Minitest::Test
                  user.bio
   end
 
-  def test_chewbotcca_servercount
+  def test_hqtrivia_servercount
     dbl = DBLRuby.new('api', 'id')
-    id = 200_052_560_399_171_584
+    id = 463_127_758_143_225_874
     bot = dbl.loadbot(id)
     url = "https://discordbots.org/api/bots/#{id}"
     server = JSON.parse(RestClient.get(url))['server_count']
