@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.files = Dir['lib/**/*.rb']
   s.homepage = 'http://github.com/Chewsterchew/DBLRuby'
   s.license = 'MIT'
+  s.add_runtime_dependency 'json', '>= 2.0.0'
   s.add_runtime_dependency 'rest-client', '~> 2.1.0.rc1'
   s.required_ruby_version = '>= 2.2.4'
 
