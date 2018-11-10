@@ -8,8 +8,7 @@ Gemspec/RequiredRubyVersion:
   Enabled: false
 
 Metrics/LineLength:
-  Exclude:
-    - 'dblruby.gemspec'
+  Enabled: false
 
 Metrics/MethodLength:
   Max: 12
