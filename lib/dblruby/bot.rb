@@ -207,17 +207,11 @@ class DBLRuby::Bot
     @data['tags']
   end
 
-  # The vanity url of the bot.
-  # @return [String] the bot's vanity url.
-  def vanity
-    @data['vanity']
+  # Get the bot's donate bot guild ID.
+  # @return [String] the bot's donate bot guild ID.
+  def donatebotguildid
+    @data['donatebotguildid']
   end
 
-  # Get the bot's legacy status.
-  # @return [true, false] the bot's legacy status.
-  def legacy
-    @data['legacy']
-  end
-
-  alias legacy? legacy
+  alias donatebotserverid donatebotguildid
 end
