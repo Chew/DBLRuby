@@ -10,54 +10,53 @@ class DBLRuby
   def initialize(apikey, id)
     @api = apikey
     @id = id
-    makestats
   end
 
   # Initialize stats
-  def makestats
-    @stats = Stats.new(@api, @id)
+  def stats
+    Stats.new(@api, @id)
   end
 
   # Load a bot.
   # @param id [Integer, String] Integer/String ID of the bot you're requesting.
   def bot(id)
-    @bot = Bot.new(id)
+    Bot.new(id)
   end
 
   alias loadbot bot
 
+  # Get all of the bot's stats as if you just called DBL.bot(id)
+  # @return [Bot] the bot as a bot.
+  def self
+    bot(@id)
+  end
+
   # Load a user
   # @param id [Integer, String] Integer/String ID of the user you're requesting.
   def user(id)
-    @user = User.new(id)
+    User.new(id)
   end
 
   alias loaduser user
 
   # Change the API key
   # @param apikey [String] API Key of the bot, taken from the DBL.
-  def updateapi(apikey)
-    @api = apikey
-    makestats
-  end
+  attr_writer :api
 
-  alias updateapikey updateapi
-  alias api= updateapi
-  alias apikey= updateapi
+  alias updateapikey api=
+  alias updateapi api=
+  alias apikey= api=
 
   # Change the bot ID
   # @param id [Integer, String] Integer/String of the bot's id.
-  def updateid(id)
-    @id = id
-    makestats
-  end
+  attr_writer :id
 
   # Define voting
   def voting
-    @voting = Voting.new
+    Voting.new
   end
 
-  alias id= updateid
+  alias updateid id=
 
   # Get the ID from instantiation
   attr_reader :id
@@ -66,8 +65,6 @@ class DBLRuby
   attr_reader :api
 
   alias apikey api
-
-  attr_reader :stats
 end
 
 # Require files.
