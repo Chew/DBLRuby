@@ -77,9 +77,15 @@ class DBLRuby::Search
     )
   end
 
-  # Get the total bot Count
+  # Get the bot count in this result
   # @return [Integer] total bots returned
   # @see #size
+  def count
+    @data['count']
+  end
+
+  # Get the total possible amount of bots there are for this query
+  # @return [Integer] the total amount of bots
   def total
     @data['total']
   end
