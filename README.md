@@ -37,4 +37,4 @@ Assuming the server count is 100, the output after running `servercount` would b
 
 ## But ruby sucks
 
-no u
+***NO U***
