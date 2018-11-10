@@ -1,6 +1,6 @@
-# Find information about users.
-class DBLRuby::Voting
-  # Initialize the voting
+# Find information about the weekend.
+class DBLRuby::Weekend
+  # Initialize the weekend
   def initialize
     url = 'https://discordbots.org/api/weekend'
     @data = JSON.parse(RestClient.get(url))
@@ -11,8 +11,8 @@ class DBLRuby::Voting
 
   alias to_s data
 
-  # Return the error if there is one, nil otherwise.
-  # @return [String, nil] the error.
+  # Return the whether it's the weekend.
+  # @return [true, false] the weekend status.
   def weekend?
     @data['is_weekend']
   end

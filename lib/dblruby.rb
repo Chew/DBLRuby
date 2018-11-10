@@ -51,9 +51,9 @@ class DBLRuby
   # @param id [Integer, String] Integer/String of the bot's id.
   attr_writer :id
 
-  # Define voting
-  def voting
-    Voting.new
+  # Define weekend
+  def Weekend
+    Weekend.new
   end
 
   alias updateid id=
@@ -72,4 +72,4 @@ require 'dblruby/bot'
 require 'dblruby/errors'
 require 'dblruby/user'
 require 'dblruby/stats'
-require 'dblruby/voting'
+require 'dblruby/weekend'
