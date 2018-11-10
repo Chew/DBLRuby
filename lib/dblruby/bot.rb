@@ -187,13 +187,13 @@ class DBLRuby::Bot
 
   # The certified status of the bot.
   # @return [true, false] the bot's certified status.
-  def certifiedbot
+  def certified?
     @data['certifiedBot']
   end
 
-  alias certified? certifiedbot
-  alias certified certifiedbot
-  alias certifiedbot? certifiedbot
+  alias certifiedbot certified?
+  alias certified certified?
+  alias certifiedbot? certified?
 
   # The owners of the bot. First one in the array is the main owner.
   # @return [Array<String>] the bot's owners in an array.
