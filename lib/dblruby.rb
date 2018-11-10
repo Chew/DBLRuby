@@ -20,7 +20,7 @@ class DBLRuby
   # Load a bot.
   # @param id [Integer, String] Integer/String ID of the bot you're requesting.
   def bot(id)
-    Bot.new(id)
+    Bot.new(id: id)
   end
 
   alias loadbot bot
@@ -51,12 +51,17 @@ class DBLRuby
   # @param id [Integer, String] Integer/String of the bot's id.
   attr_writer :id
 
+  alias updateid id=
+
   # Define weekend
-  def Weekend
+  def weekend
     Weekend.new
   end
 
-  alias updateid id=
+  # @see Search#initialize
+  def search(search: nil, limit: 50, offset: 0, sort: nil, fields: nil)
+    Search.new(search: search, limit: limit, offset: offset, sort: sort, fields: fields)
+  end
 
   # Get the ID from instantiation
   attr_reader :id
@@ -71,5 +76,6 @@ end
 require 'dblruby/bot'
 require 'dblruby/errors'
 require 'dblruby/user'
+require 'dblruby/search'
 require 'dblruby/stats'
 require 'dblruby/weekend'
