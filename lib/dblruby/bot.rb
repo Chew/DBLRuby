@@ -101,9 +101,9 @@ class DBLRuby::Bot
   end
 
   # The discriminator of the bot.
-  # @return [Integer] the bot's discriminator without the #.
+  # @return [String] the bot's discriminator.
   def discriminator
-    @data['discriminator'].delete('#').to_i
+    @data['discriminator']
   end
 
   alias discrim discriminator
