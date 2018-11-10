@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = 'dblruby'
-  s.version = '0.8.0'
-  s.date = '2018-11-05'
+  s.version = '1.0.0'
+  s.date = '2018-11-10'
   s.summary = 'Discord Bot List API for Ruby'
   s.description = 'A Ruby library for the Discord Bot List (https://discordbots.org) API.'
   s.authors = ['Chewsterchew']
