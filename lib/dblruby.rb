@@ -58,6 +58,11 @@ class DBLRuby
     Weekend.new
   end
 
+  # Skip the middleman, let's just see if it's the weekend!
+  def weekend?
+    weekend.weekend?
+  end
+
   # @see Search#initialize
   def search(search: nil, limit: 50, offset: 0, sort: nil, fields: nil)
     Search.new(search: search, limit: limit, offset: offset, sort: sort, fields: fields)
