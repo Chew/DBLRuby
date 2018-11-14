@@ -1,14 +1,20 @@
+# Prefer compact module/class defs
 Style/ClassAndModuleChildren:
-  Enabled: false
-
-Metrics/ClassLength:
   Enabled: false
 
 Gemspec/RequiredRubyVersion:
   Enabled: false
 
-Metrics/LineLength:
+# Disable all metrics.
+Metrics:
   Enabled: false
 
-Metrics/MethodLength:
-  Max: 12
+# https://stackoverflow.com/q/4763121/
+Style/Alias:
+  Enabled: false
+
+AllCops:
+  TargetRubyVersion: 2.4.2
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
