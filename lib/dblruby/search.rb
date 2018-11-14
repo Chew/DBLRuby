@@ -23,7 +23,7 @@ class DBLRuby::Search
   # @return data in raw json form.
   attr_reader :data
 
-  alias to_s data
+  alias_method :to_s, :data
 
   # @return [String] the search query
   attr_reader :search

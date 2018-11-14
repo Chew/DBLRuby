@@ -18,7 +18,7 @@ class DBLRuby::Stats
           'DBL Returned a 404 unknown error! Did you enter the correct ID?'
   end
 
-  alias servers servercount
+  alias_method :servers, :servercount
 
   # Update the bot's server count.
   # @param count [Integer, Array<Integer>] Integer/String of bot server count.
@@ -40,7 +40,7 @@ class DBLRuby::Stats
           'There was an error posting stats to the DBL. Is your API key ok?'
   end
 
-  alias servers= updateservercount
+  alias_method :servers=, :updateservercount
 
   # Check to see if a user really voted, via an ID.
   # @param id [Integer, String] Integer/String ID of user you're requesting.

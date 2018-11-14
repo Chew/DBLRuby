@@ -18,7 +18,7 @@ class DBLRuby::Bot
   # @return data in raw json form.
   attr_reader :data
 
-  alias to_s data
+  alias_method :to_s, :data
 
   # Return the error if there is one, nil otherwise.
   # @return [String, nil] the error.
@@ -110,8 +110,8 @@ class DBLRuby::Bot
     @data['discriminator']
   end
 
-  alias discrim discriminator
-  alias tag discriminator
+  alias_method :discrim, :discriminator
+  alias_method :tag, :discriminator
 
   # The username of the bot.
   # @return [String] the bot's username.
@@ -156,8 +156,8 @@ class DBLRuby::Bot
     @data['server_count'].to_i
   end
 
-  alias guild_count server_count
-  alias server server_count
+  alias_method :guild_count, :server_count
+  alias_method :server, :server_count
 
   # Get the bot's "This Bot Powers the following Servers"
   # @return [Array<String>] the bot's guilds.
@@ -165,7 +165,7 @@ class DBLRuby::Bot
     @data['guilds']
   end
 
-  alias servers guilds
+  alias_method :servers, :guilds
 
   # Get the bot's shards.
   # @return [Array<String>] the bot's shards.
@@ -179,7 +179,7 @@ class DBLRuby::Bot
     @data['monthlyPoints'].to_i
   end
 
-  alias monthlyvotes monthlypoints
+  alias_method :monthlyvotes, :monthlypoints
 
   # The amount of upvotes the bot has.
   # @return [Integer] the bot's total points/votes.
@@ -187,7 +187,7 @@ class DBLRuby::Bot
     @data['points'].to_i
   end
 
-  alias votes points
+  alias_method :votes, :points
 
   # The certified status of the bot.
   # @return [true, false] the bot's certified status.
@@ -195,9 +195,9 @@ class DBLRuby::Bot
     @data['certifiedBot']
   end
 
-  alias certifiedbot certified?
-  alias certified certified?
-  alias certifiedbot? certified?
+  alias_method :certifiedbot, :certified?
+  alias_method :certified, :certified?
+  alias_method :certifiedbot?, :certified?
 
   # The owners of the bot. First one in the array is the main owner.
   # @return [Array<String>] the bot's owners in an array.
@@ -217,5 +217,5 @@ class DBLRuby::Bot
     @data['donatebotguildid']
   end
 
-  alias donatebotserverid donatebotguildid
+  alias_method :donatebotserverid, :donatebotguildid
 end

@@ -23,7 +23,7 @@ class DBLRuby
     Bot.new(id: id)
   end
 
-  alias loadbot bot
+  alias_method :loadbot, :bot
 
   # Get all of the bot's stats as if you just called DBL.bot(id)
   # @return [Bot] the bot as a bot.
@@ -37,21 +37,21 @@ class DBLRuby
     User.new(id)
   end
 
-  alias loaduser user
+  alias_method :loaduser, :user
 
   # Change the API key
   # @param apikey [String] API Key of the bot, taken from the DBL.
   attr_writer :api
 
-  alias updateapikey api=
-  alias updateapi api=
-  alias apikey= api=
+  alias_method :updateapikey, :api=
+  alias_method :updateapi, :api=
+  alias_method :apikey=, :api=
 
   # Change the bot ID
   # @param id [Integer, String] Integer/String of the bot's id.
   attr_writer :id
 
-  alias updateid id=
+  alias_method :updateid, :id=
 
   # Define weekend
   def weekend
@@ -74,7 +74,7 @@ class DBLRuby
   # Get the API Key from instantiation
   attr_reader :api
 
-  alias apikey api
+  alias_method :apikey, :api
 end
 
 # Require files.

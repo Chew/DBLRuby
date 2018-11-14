@@ -9,7 +9,7 @@ class DBLRuby::Weekend
   # @return data in raw json form.
   attr_reader :data
 
-  alias to_s data
+  alias_method :to_s, :data
 
   # Return the whether it's the weekend.
   # @return [true, false] the weekend status.
@@ -17,5 +17,5 @@ class DBLRuby::Weekend
     @data['is_weekend']
   end
 
-  alias isweekend weekend?
+  alias_method :isweekend, :weekend?
 end

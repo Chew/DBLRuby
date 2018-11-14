@@ -77,5 +77,5 @@ class DBLRuby::Widget
     output
   end
 
-  alias to_s url
+  alias_method :to_s, :url
 end

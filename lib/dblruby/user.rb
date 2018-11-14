@@ -14,7 +14,7 @@ class DBLRuby::User
   # @return data in raw json form.
   attr_reader :data
 
-  alias to_s data
+  alias_method :to_s, :data
 
   # Return the error if there is one, nil otherwise.
   # @return [String, nil] the error.
@@ -46,8 +46,8 @@ class DBLRuby::User
     @data['discriminator'].delete('#').to_i
   end
 
-  alias discrim discriminator
-  alias tag discriminator
+  alias_method :discrim, :discriminator
+  alias_method :tag, :discriminator
 
   # Returns the user's distinct, which is the Username and Discriminator.
   # @return [String] the user's username + discrim.
@@ -133,7 +133,7 @@ class DBLRuby::User
     @data['color']
   end
 
-  alias colour color
+  alias_method :colour, :color
 
   # The supporter status of the user.
   # @return [true, false] the user's supporter status.
@@ -141,7 +141,7 @@ class DBLRuby::User
     @data['supporter']
   end
 
-  alias supporter supporter?
+  alias_method :supporter, :supporter?
 
   # The certified status of the user.
   # @return [true, false] the user's certified status.
@@ -149,9 +149,9 @@ class DBLRuby::User
     @data['certifiedDev']
   end
 
-  alias certified certified?
-  alias certifieddev certified
-  alias certifieddev? certified
+  alias_method :certified, :certified?
+  alias_method :certifieddev, :certified
+  alias_method :certifieddev?, :certified
 
   # The mod status of the user.
   # @return [true, false] the user's mod status.
@@ -159,7 +159,7 @@ class DBLRuby::User
     @data['mod']
   end
 
-  alias mod mod?
+  alias_method :mod, :mod?
 
   # The website moderator status of the user.
   # @return [true, false] the user's website mod status.
@@ -167,7 +167,7 @@ class DBLRuby::User
     @data['webMod']
   end
 
-  alias webmod webmod?
+  alias_method :webmod, :webmod?
 
   # The admin status of the user.
   # @return [true, false] the user's admin status.
@@ -175,5 +175,5 @@ class DBLRuby::User
     @data['admin']
   end
 
-  alias admin admin?
+  alias_method :admin, :admin?
 end
