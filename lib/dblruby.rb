@@ -63,6 +63,11 @@ class DBLRuby
     Search.new(search: search, limit: limit, offset: offset, sort: sort, fields: fields)
   end
 
+  # @see Widget#initialize
+  def widget(size: 'large', file_type: 'png', small_type: nil, topcolor: nil, middlecolor: nil, usernamecolor: nil, certifiedcolor: nil, datacolor: nil, labelcolor: nil, highlightcolor: nil, avatarbg: nil, leftcolor: nil, rightcolor: nil, lefttextcolor: nil, righttextcolor: nil, id: @id)
+    Widget.new(size: size, file_type: file_type, small_type: small_type, topcolor: topcolor, middlecolor: middlecolor, usernamecolor: usernamecolor, certifiedcolor: certifiedcolor, datacolor: datacolor, labelcolor: labelcolor, highlightcolor: highlightcolor, avatarbg: avatarbg, leftcolor: leftcolor, rightcolor: rightcolor, lefttextcolor: lefttextcolor, righttextcolor: righttextcolor, id: id)
+  end
+
   # Get the ID from instantiation
   attr_reader :id
 
@@ -79,3 +84,4 @@ require 'dblruby/user'
 require 'dblruby/search'
 require 'dblruby/stats'
 require 'dblruby/weekend'
+require 'dblruby/widget'
