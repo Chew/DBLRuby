@@ -49,6 +49,44 @@ class DBLRuby::Widget
     raise DBLRuby::Errors::InvalidWidget, 'Invalid size' unless %w[small large].include? @size
     raise DBLRuby::Errors::InvalidWidget, 'Invalid small widget type' if @size == 'small' && !%w[owner status upvotes servers lib].include?(@small_type)
     raise DBLRuby::Errors::InvalidWidget, 'Invalid file type' unless %w[png svg].include? @file_type
+    raise DBLRuby::Errors::InvalidWidget, 'Invalid noavatar parameter' unless %w[true false].include? @noavatar
+  end
+
+  def size=(size)
+    raise DBLRuby::Errors::InvalidWidget, 'Invalid size' unless %w[small large].include? size
+
+    @size = size
+  end
+
+  def file_type=(file_type)
+    raise DBLRuby::Errors::InvalidWidget, 'Invalid file type' unless %w[png svg].include? file_type
+
+    @file_type = file_type
+  end
+
+  def small_type=(small_type)
+    raise DBLRuby::Errors::InvalidWidget, 'Invalid small widget type' if @size == 'small' && !%w[owner status upvotes servers lib].include?(small_type)
+
+    @small_type = small_type
+  end
+
+  attr_writer :topcolor
+  attr_writer :middlecolor
+  attr_writer :usernamecolor
+  attr_writer :certifiedcolor
+  attr_writer :datacolor
+  attr_writer :labelcolor
+  attr_writer :highlightcolor
+  attr_writer :avatarbg
+  attr_writer :leftcolor
+  attr_writer :rightcolor
+  attr_writer :lefttextcolor
+  attr_writer :righttextcolor
+
+  def noavatar=(noavatar)
+    raise DBLRuby::Errors::InvalidWidget, 'Invalid noavatar parameter' unless %w[true false].include? noavatar
+
+    @noavatar = noavatar
   end
 
   # @return [String] The URL, ready for linking.
