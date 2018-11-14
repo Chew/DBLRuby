@@ -49,7 +49,7 @@ class DBLRuby::Widget
     raise DBLRuby::Errors::InvalidWidget, 'Invalid size' unless %w[small large].include? @size
     raise DBLRuby::Errors::InvalidWidget, 'Invalid small widget type' if @size == 'small' && !%w[owner status upvotes servers lib].include?(@small_type)
     raise DBLRuby::Errors::InvalidWidget, 'Invalid file type' unless %w[png svg].include? @file_type
-    raise DBLRuby::Errors::InvalidWidget, 'Invalid noavatar parameter' unless %w[true false].include? @noavatar
+    raise DBLRuby::Errors::InvalidWidget, 'Invalid noavatar parameter' if !@noavatar.nil? && !%w[true false].include?(@noavatar)
   end
 
   def size=(size)
