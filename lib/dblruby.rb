@@ -20,7 +20,7 @@ class DBLRuby
   # Load a bot.
   # @param id [Integer, String] Integer/String ID of the bot you're requesting.
   def bot(id)
-    Bot.new(id: id)
+    Bot.new(id: id, api: @api)
   end
 
   alias_method :loadbot, :bot
@@ -34,7 +34,7 @@ class DBLRuby
   # Load a user
   # @param id [Integer, String] Integer/String ID of the user you're requesting.
   def user(id)
-    User.new(id)
+    User.new(id, api)
   end
 
   alias_method :loaduser, :user

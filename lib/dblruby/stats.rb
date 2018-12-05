@@ -12,7 +12,7 @@ class DBLRuby::Stats
   # @raise [DBLRuby::Errors::InvalidID] if the DBL returns a 404 error.
   def servercount
     url = "https://discordbots.org/api/bots/#{@id}"
-    JSON.parse(RestClient.get(url))['server_count'].to_i
+    JSON.parse(RestClient.get(url, Authorization: @api))['server_count'].to_i
   rescue RestClient::NotFound
     raise DBLRuby::Errors::InvalidID,
           'DBL Returned a 404 unknown error! Did you enter the correct ID?'
