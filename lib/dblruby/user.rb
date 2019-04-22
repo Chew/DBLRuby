@@ -43,7 +43,7 @@ class DBLRuby::User
   # The discriminator of the user.
   # @return [Integer] the user's discriminator without the #.
   def discriminator
-    @data['discriminator'].delete('#').to_i
+    @data['discriminator'].delete('#')
   end
 
   alias_method :discrim, :discriminator
