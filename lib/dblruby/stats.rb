@@ -21,10 +21,10 @@ class DBLRuby::Stats
   alias_method :servers, :servercount
 
   # Update the bot's server count.
-  # @param count [Integer, Array<Integer>] Integer/String of bot server count.
+  # @param count [Integer] Integer/String of bot server count.
   # @param shard_id [Integer] ID of the shard
   # @param shard_count [Integer] amount of shards the bot has.
-  # @raise [DBLRuby::Errors::InvalidAPIKey] if the DBL returns a 401 error.
+  # @raise [DBLRuby::Errors::InvalidAPIKey] if DBL returns a 401 error.
   # @return The count of the servers.
   def updateservercount(count, shard_id = nil, shard_count = nil)
     url = "https://discordbots.org/api/bots/#{@id}/stats"
