@@ -13,12 +13,14 @@ class DBLRuby
   end
 
   # Initialize stats
+  # @return [Stats] the new stats object
   def stats
     Stats.new(@api, @id)
   end
 
   # Load a bot.
   # @param id [Integer, String] Integer/String ID of the bot you're requesting.
+  # @return [Bot] the new Bot object
   def bot(id)
     Bot.new(id: id, api: @api)
   end
@@ -33,6 +35,7 @@ class DBLRuby
 
   # Load a user
   # @param id [Integer, String] Integer/String ID of the user you're requesting.
+  # @return [User] the new user object
   def user(id)
     User.new(id, api)
   end
@@ -40,7 +43,6 @@ class DBLRuby
   alias_method :loaduser, :user
 
   # Change the API key
-  # @param apikey [String] API Key of the bot, taken from the DBL.
   attr_writer :api
 
   alias_method :updateapikey, :api=
@@ -48,21 +50,25 @@ class DBLRuby
   alias_method :apikey=, :api=
 
   # Change the bot ID
-  # @param id [Integer, String] Integer/String of the bot's id.
   attr_writer :id
 
   alias_method :updateid, :id=
 
   # Define weekend
+  # @return [Weekend] the new Weekend object
   def weekend
     Weekend.new
   end
 
-  # Skip the middleman, let's just see if it's the weekend!
+  # Returns true or false depending on if it's the "weekend"
+  # Weekend counts as 2 votes instead of one.
+  # @return [true, false] whether it's the weekend or not
   def weekend?
     weekend.weekend?
   end
 
+  # Start a search
+  # @return [Search] the new search object
   # @see Search#initialize
   def search(search: nil, limit: 50, offset: 0, sort: nil, fields: nil)
     Search.new(search: search, limit: limit, offset: offset, sort: sort, fields: fields)

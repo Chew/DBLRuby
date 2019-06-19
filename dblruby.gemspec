@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
     'changelog_uri' => 'https://github.com/Chew/DBLRuby/releases',
     'homepage_uri' => 'http://github.com/Chew/DBLRuby',
     'source_code_uri' => 'http://github.com/Chew/DBLRuby',
-    'wiki_uri' => 'http://github.com/Chew/DBLRuby/wiki'
+    'wiki_uri' => 'http://github.com/Chew/DBLRuby/wiki',
+    'documentation_uri' => 'https://rubydocs.chew.pro/docs/dblruby'
   }
 end

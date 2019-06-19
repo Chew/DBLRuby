@@ -2,7 +2,7 @@
 class DBLRuby::Bot
   # Initialize the bot
   # @param id [Integer, String] Integer/String ID of bot you're requesting.
-  # @raise [DBLRuby::Errors::InvalidBot] if the DBL returns a 404 error.
+  # @raise [DBLRuby::Errors::InvalidBot] if DBL returns a 404 error.
   def initialize(id: nil, data: nil, api: nil)
     if id.nil?
       @data = data
