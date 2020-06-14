@@ -26,6 +26,9 @@ class DBLRuby
       url = "https://top.gg/api/bots/#{id}"
       data = JSON.parse(RestClient.get(url, Authorization: api))
       return Bot.new(data)
+    rescue RestClient::Unauthorized
+      raise DBLRuby::Errors::InvalidAPIKey,
+            'The API returned a 401 error, I believe your token is invalid.'
     rescue RestClient::NotFound
       raise DBLRuby::Errors::InvalidBot,
             'The API returned a 404 error! Is that bot listed?'
@@ -48,6 +51,9 @@ class DBLRuby
       url = "https://top.gg/api/users/#{id}"
       data = JSON.parse(RestClient.get(url, Authorization: api))
       return User.new(data)
+    rescue RestClient::Unauthorized
+      raise DBLRuby::Errors::InvalidAPIKey,
+            'The API returned a 401 error, I believe your token is invalid.'
     rescue RestClient::NotFound
       raise DBLRuby::Errors::InvalidBot,
             'The API returned a 404 error! Is that bot listed?'
