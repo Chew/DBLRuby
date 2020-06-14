@@ -82,7 +82,7 @@ class DBLRuby::User
   end
 
   # The social usernames of the user.
-  # @return [Array<String>] the user's social links.
+  # @return [Hash<String, String>] the user's social links.
   def social
     @data['social']
   end
@@ -90,7 +90,7 @@ class DBLRuby::User
   # Does the user have any social links? True if so, false if not.
   # @return [true, false] if the user has any social links.
   def social?
-    !@data['social'].nil?
+    @data['social'] != {}
   end
 
   # The youtube channel id of the user.
