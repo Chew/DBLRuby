@@ -3,12 +3,8 @@ class DBLRuby::User
   # Initialize the user
   # @param id [Integer, String] Integer/String ID of user you're requesting.
   # @raise [DBLRuby::Errors::InvalidUser] if the DBL returns a 404 error.
-  def initialize(id, api)
-    url = "https://discordbots.org/api/users/#{id}"
-    @data = JSON.parse(RestClient.get(url, Authorization: api))
-  rescue RestClient::NotFound
-    raise DBLRuby::Errors::InvalidUser,
-          'The API returned a 404 error! Does that user exist?'
+  def initialize(data)
+    @data = data
   end
 
   # @return data in raw json form.

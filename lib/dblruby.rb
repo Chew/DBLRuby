@@ -22,7 +22,14 @@ class DBLRuby
   # @param id [Integer, String] Integer/String ID of the bot you're requesting.
   # @return [Bot] the new Bot object
   def bot(id)
-    Bot.new(id: id, api: @api)
+    begin
+      url = "https://top.gg/api/bots/#{id}"
+      data = JSON.parse(RestClient.get(url, Authorization: api))
+      return Bot.new(data)
+    rescue RestClient::NotFound
+      raise DBLRuby::Errors::InvalidBot,
+            'The API returned a 404 error! Is that bot listed?'
+    end
   end
 
   alias_method :loadbot, :bot
@@ -37,7 +44,14 @@ class DBLRuby
   # @param id [Integer, String] Integer/String ID of the user you're requesting.
   # @return [User] the new user object
   def user(id)
-    User.new(id, api)
+    begin
+      url = "https://top.gg/api/users/#{id}"
+      data = JSON.parse(RestClient.get(url, Authorization: api))
+      return User.new(data)
+    rescue RestClient::NotFound
+      raise DBLRuby::Errors::InvalidBot,
+            'The API returned a 404 error! Is that bot listed?'
+    end
   end
 
   alias_method :loaduser, :user
