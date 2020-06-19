@@ -14,7 +14,10 @@ Style/Alias:
   Enabled: false
 
 AllCops:
-  TargetRubyVersion: 2.4.2
+  TargetRubyVersion: 2.5.3
 
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Layout/LineLength:
   Enabled: false
