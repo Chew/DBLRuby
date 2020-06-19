@@ -20,19 +20,18 @@ class DBLRuby
 
   # Load a bot.
   # @param id [Integer, String] Integer/String ID of the bot you're requesting.
+  # @raise [DBLRuby::Errors::InvalidBot] if a 404 error is returned.
   # @return [Bot] the new Bot object
   def bot(id)
-    begin
-      url = "https://top.gg/api/bots/#{id}"
-      data = JSON.parse(RestClient.get(url, Authorization: api))
-      return Bot.new(data)
-    rescue RestClient::Unauthorized
-      raise DBLRuby::Errors::InvalidAPIKey,
-            'The API returned a 401 error, I believe your token is invalid.'
-    rescue RestClient::NotFound
-      raise DBLRuby::Errors::InvalidBot,
-            'The API returned a 404 error! Is that bot listed?'
-    end
+    url = "https://top.gg/api/bots/#{id}"
+    data = JSON.parse(RestClient.get(url, Authorization: api))
+    Bot.new(data)
+  rescue RestClient::Unauthorized
+    raise DBLRuby::Errors::InvalidAPIKey,
+          'The API returned a 401 error, I believe your token is invalid.'
+  rescue RestClient::NotFound
+    raise DBLRuby::Errors::InvalidBot,
+          'The API returned a 404 error! Is that bot listed?'
   end
 
   alias_method :loadbot, :bot
@@ -45,19 +44,18 @@ class DBLRuby
 
   # Load a user
   # @param id [Integer, String] Integer/String ID of the user you're requesting.
+  # @raise [DBLRuby::Errors::InvalidUser] if a 404 error is returned.
   # @return [User] the new user object
   def user(id)
-    begin
-      url = "https://top.gg/api/users/#{id}"
-      data = JSON.parse(RestClient.get(url, Authorization: api))
-      return User.new(data)
-    rescue RestClient::Unauthorized
-      raise DBLRuby::Errors::InvalidAPIKey,
-            'The API returned a 401 error, I believe your token is invalid.'
-    rescue RestClient::NotFound
-      raise DBLRuby::Errors::InvalidBot,
-            'The API returned a 404 error! Is that bot listed?'
-    end
+    url = "https://top.gg/api/users/#{id}"
+    data = JSON.parse(RestClient.get(url, Authorization: api))
+    User.new(data)
+  rescue RestClient::Unauthorized
+    raise DBLRuby::Errors::InvalidAPIKey,
+          'The API returned a 401 error, I believe your token is invalid.'
+  rescue RestClient::NotFound
+    raise DBLRuby::Errors::InvalidBot,
+          'The API returned a 404 error! Is that bot listed?'
   end
 
   alias_method :loaduser, :user

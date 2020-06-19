@@ -1,8 +1,7 @@
 # Find information about bots.
 class DBLRuby::Bot
   # Initialize the bot
-  # @param id [Integer, String] Integer/String ID of bot you're requesting.
-  # @raise [DBLRuby::Errors::InvalidBot] if DBL returns a 404 error.
+  # @param data [JSON] Bot object in JSON form.
   def initialize(data)
     @data = data
   end
