@@ -6,23 +6,9 @@ require 'dblruby'
 require 'rest-client'
 
 class DBLRubyTest < Minitest::Test
-  def test_chew_bio
-    dbl = DBLRuby.new('api', 'id')
-    id = 116_013_677_060_161_545
-    user = dbl.loaduser(id)
-    url = "https://discordbots.org/api/users/#{id}"
-    bio = JSON.parse(RestClient.get(url))['bio']
-    assert_equal bio,
-                 user.bio
-  end
-
-  def test_hqtrivia_servercount
-    dbl = DBLRuby.new('api', 'id')
-    id = 463_127_758_143_225_874
-    bot = dbl.loadbot(id)
-    url = "https://discordbots.org/api/bots/#{id}"
-    server = JSON.parse(RestClient.get(url))['server_count']
-    assert_equal server,
-                 bot.server
+  def test_is_weekend
+    api = JSON.parse(RestClient.get('https://top.gg/api/weekend'))['is_weekend']
+    code = DBLRuby.new('', 0).weekend?
+    assert_equal(api, code)
   end
 end
