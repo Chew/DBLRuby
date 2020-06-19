@@ -74,10 +74,12 @@ class DBLRuby
 
   alias_method :updateid, :id=
 
-  # Define weekend
+  # The Weekend endpoint only really tells us if it's a weekend
+  # @see [weekend?] for a simplier version.
   # @return [Weekend] the new Weekend object
   def weekend
-    Weekend.new
+    url = 'https://top.gg/api/weekend'
+    Weekend.new JSON.parse(RestClient.get(url))
   end
 
   # Returns true or false depending on if it's the "weekend"

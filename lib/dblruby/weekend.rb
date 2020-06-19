@@ -1,9 +1,9 @@
 # Find information about the weekend.
 class DBLRuby::Weekend
   # Initialize the weekend
-  def initialize
-    url = 'https://discordbots.org/api/weekend'
-    @data = JSON.parse(RestClient.get(url))
+  # @param data [JSON] the weekend response in JSON form
+  def initialize(data)
+    @data = data
   end
 
   # @return data in raw json form.
